@@ -25,4 +25,8 @@ class Database_Handler:
 		conn.commit()
 		conn.close()
 		
-	
+	def insert_information(self):
+		try:
+    		c.execute("INSERT INTO " + self.table_name + " VALUES (?,?,?)", (password, account, description))
+		except:
+    		print('ERROR: Something went wrong with insertion')
