@@ -15,10 +15,11 @@ def main():
 
    info = Account_Information(password, account, description)
 
-   database = Data_Handler('database.sqlite', 'Password_Database')
+   database = Database_Handler('database.sqlite', 'Password_Database')
    database.open_connection()
    database.create_table()
    database.insert_information(info.get_password(), info.get_account(), info.get_description)
+   database.close_connection()
    
    print
    print(info.to_string()) 

@@ -17,8 +17,8 @@ class Database_Handler:
       self.__sqlite_file = file_location
       self.__table_name = table_name
 		
-   def open_connection(self)
-      conn = sqlite3.connect(self.sqlite_file)
+   def open_connection(self):
+      conn = sqlite3.connect(self.__sqlite_file)
       c = conn.cursor()
 		
    def close_connection(self):
