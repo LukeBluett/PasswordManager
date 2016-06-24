@@ -25,7 +25,7 @@ class Database_Handler:
 		conn.commit()
 		conn.close()
 		
-	def insert_information(self):
+	def insert_information(self, password, account, description):
 		try:
     		c.execute("INSERT INTO " + self.table_name + " VALUES (?,?,?)", (password, account, description))
 		except:
