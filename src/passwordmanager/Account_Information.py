@@ -12,6 +12,15 @@ class Account_Information:
       self.__account = account
       self.__description = description
 
+   def get_password(self):
+      return self.__password
+      
+   def get_account(self):
+      return self.__account
+      
+   def get_description(self):
+      return self.description
+
    def to_string(self):
       return 'Password: ' + self.__password + '\nAccount: ' + self.__account + '\nDescription: ' + self.__description
 

@@ -2,6 +2,7 @@
 
 from Account_Information import *
 from Create_Password import *
+from Database_Handler import *
 
 def main():
    title('* Password Manager *')
@@ -14,6 +15,11 @@ def main():
 
    info = Account_Information(password, account, description)
 
+   database = Data_Handler('database.sqlite', 'Password_Database')
+   database.open_connection()
+   database.create_table()
+   database.insert_information(info.get_password(), info.get_account(), info.get_description)
+   
    print
    print(info.to_string()) 
 
